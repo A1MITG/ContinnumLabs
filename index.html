@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuum Labs – Built across time. Shipped monthly.</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Modular Theme System - Uncomment to activate -->
+    <link rel="stylesheet" href="theme-futuristic.css">
+    <link rel="stylesheet" href="theme-toggle.css">
+</head>
+<body class="theme-futuristic">
+    <!-- NAVIGATION WITH HOVER POPUPS -->
+    <nav class="main-nav">
+        <div class="nav-logo-wrapper">
+            <div class="nav-logo">CONTINUUM LABS</div>
+            <div class="nav-logo-tooltip">A place to build quietly.</div>
+        </div>
+        <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+            <span class="theme-icon-dark">☀️</span>
+            <span class="theme-icon-light">🌙</span>
+        </button>
+        <div class="nav-links">
+            <div class="nav-item">
+                <a href="#">Who We Are</a>
+                <div class="nav-popup">
+                    <p>We are a small, independent lab focused on turning ideas into shipped products.</p>
+                    <p>Continuum Labs brings together long-term thinking, modern tools, and disciplined execution to build useful software in public.</p>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">What We Do</a>
+                <div class="nav-popup">
+                    <p>We design and ship small, useful applications — one every month.</p>
+                    <p>Each build begins with a real problem, is scoped deliberately, and is released as a working artifact that anyone can use or learn from.</p>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">How We Do It</a>
+                <div class="nav-popup">
+                    <p>– Start with first principles, not features</p>
+                    <p>– Keep scope intentionally small</p>
+                    <p>– Use AI to accelerate, not replace, thinking</p>
+                    <p>– Ship consistently, iterate openly</p>
+                    <p>– Document what worked and what didn't</p>
+                    <p class="popup-emphasis">Execution is not the outcome. It is the discipline.</p>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">Our North Star</a>
+                <div class="nav-popup">
+                    <p class="popup-lead">To turn thoughtful ideas into shipped reality — consistently, transparently, and over time.</p>
+                    <p>Momentum is our advantage. Continuity is our edge.</p>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#">Our Charter</a>
+                <div class="nav-popup">
+                    <p class="popup-lead">We believe ideas earn their value by being built.</p>
+                    <p>We build small.</p>
+                    <p>We ship monthly.</p>
+                    <p>We learn in public.</p>
+                    <p>We optimize for the long arc.</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ET-Sphere Intelligence (only visible in futuristic theme) -->
+    <div class="et-sphere-container">
+        <div class="sphere-intelligence">
+            <!-- Solid sphere with gradient -->
+            <div class="solid-sphere"></div>
+            
+            <!-- Core infinity symbol -->
+            <svg class="infinity-symbol" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="infinityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#9d4edd;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00f0ff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="infinityGradientLight" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path id="infinityPath" d="M 20,50 Q 20,20 50,20 Q 80,20 100,50 Q 120,80 150,80 Q 180,80 180,50 Q 180,20 150,20 Q 120,20 100,50 Q 80,80 50,80 Q 20,80 20,50 Z" 
+                      fill="none" 
+                      stroke="url(#infinityGradient)" 
+                      stroke-width="4"
+                      class="infinity-path"/>
+                <circle r="6" fill="#00d9ff" class="infinity-dot">
+                    <animateMotion dur="8s" repeatCount="indefinite">
+                        <mpath href="#infinityPath"/>
+                    </animateMotion>
+                </circle>
+            </svg>
+            
+            <!-- Particle field -->
+            <div class="particle-field"></div>
+            
+            <!-- Intelligence pulse -->
+            <div class="intelligence-pulse"></div>
+            
+            <!-- Interactive hint -->
+            <div class="sphere-hint">Ask the Lab</div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">We build one thoughtful app every month.</p>
+            <p class="hero-description">
+                Long-term thinking. Consistent execution.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="toggleIntakeForm()">Suggest the Next App</button>
+                <a href="built.html" class="btn-secondary">See What We've Built</a>
+            </div>
+        </div>
+        <div class="continuity-line"></div>
+    </section>
+
+    <!-- PROBLEM INTAKE FORM -->
+    <section class="intake-section" id="intake-section" style="display: none;">
+        <div class="intake-container">
+            <div class="intake-form-wrapper" id="intake-form-wrapper">
+                <!-- Header -->
+                <header class="intake-header">
+                    <h2 class="intake-title">Suggest a problem worth solving</h2>
+                    <p class="intake-subtitle">If a small app or AI tool could remove one recurring friction from your work or life, what would it be?</p>
+                </header>
+
+                <!-- Form -->
+                <form class="intake-form" id="problem-intake-form">
+                    <!-- Core Problem Input -->
+                    <div class="form-group">
+                        <label for="problem" class="form-label">The problem</label>
+                        <textarea 
+                            id="problem" 
+                            name="problem"
+                            placeholder="Describe the problem in one or two sentences. Focus on the friction, not the solution."
+                            maxlength="500"
+                            rows="4"
+                            class="form-textarea"
+                            required
+                        ></textarea>
+                        <p class="char-count"><span id="problem-count">0</span>/500 characters</p>
+                    </div>
+
+                    <!-- Optional Context -->
+                    <div class="form-group">
+                        <label for="audience" class="form-label">
+                            Who experiences this problem? <span class="optional">(optional)</span>
+                        </label>
+                        <input 
+                            id="audience" 
+                            type="text"
+                            name="audience"
+                            placeholder="e.g., product managers, small business owners, students"
+                            class="form-input"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="frequency" class="form-label">
+                            How often does it occur? <span class="optional">(optional)</span>
+                        </label>
+                        <select id="frequency" name="frequency" class="form-select">
+                            <option value="">Select frequency</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="occasional">Occasionally</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="impact" class="form-label">
+                            Why does this matter? <span class="optional">(optional)</span>
+                        </label>
+                        <textarea 
+                            id="impact"
+                            name="impact" 
+                            placeholder="What happens if this problem is not solved?"
+                            rows="2"
+                            class="form-textarea form-textarea-small"
+                        ></textarea>
+                    </div>
+
+                    <!-- Constraint Note -->
+                    <p class="intake-note">
+                        Continuum Labs builds small, focused tools. Problems that can be meaningfully addressed in a lightweight way are most likely to be explored.
+                    </p>
+
+                    <!-- Optional Identity -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            Name or handle <span class="optional">(optional)</span>
+                        </label>
+                        <input 
+                            id="submitter-name" 
+                            type="text"
+                            name="name"
+                            placeholder="Only if you're open to follow-up or credit"
+                            class="form-input"
+                        />
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" id="submit-btn" disabled>
+                            → Submit problem
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Post-submission state -->
+            <div class="intake-success" id="intake-success" style="display: none;">
+                <p class="success-title">Thank you.</p>
+                <p class="success-message">We review every submission thoughtfully. Some problems may become experiments. All of them inform our thinking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DUALITY SECTION -->
+    <section class="generational">
+        <div class="generational-content">
+            <div class="dual-column">
+                <div class="column foundation">
+                    <h3>Foundation</h3>
+                    <ul>
+                        <li>Vision</li>
+                        <li>Depth</li>
+                        <li>Patience</li>
+                        <li>Craft</li>
+                    </ul>
+                </div>
+                <div class="divider"></div>
+                <div class="column momentum">
+                    <h3>Momentum</h3>
+                    <ul>
+                        <li>Velocity</li>
+                        <li>Delivery</li>
+                        <li>Progress</li>
+                        <li>Code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED APP SECTION -->
+    <section class="featured-app">
+        <div class="featured-content">
+            <h2 class="section-heading">Shipped This Month</h2>
+            <div class="app-card">
+                <div class="app-badge">Built: Dec 2025</div>
+                <div class="app-visual">
+                    <div class="app-placeholder">TASKFLOW</div>
+                </div>
+                <h3 class="app-name">Taskflow</h3>
+                <p class="app-tagline">A better way to manage deep work</p>
+                <p class="app-description">
+                    Built to help knowledge workers protect focus and manage context-heavy projects.
+                </p>
+                <a href="#" class="app-link">Explore Taskflow →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD-IN-PUBLIC SECTION -->
+    <section class="build-public">
+        <div class="build-content">
+            <h2 class="section-heading">From the Lab</h2>
+            <div class="log-entries">
+                <div class="log-entry">
+                    <div class="log-header">
+                        <h4>What we're building now</h4>
+                        <span class="log-date">Dec 2025</span>
+                    </div>
+                    <div class="log-divider"></div>
+                    <p><strong>Vantage360</strong> — Delivering executive-ready competitive intelligence dossiers on any company or product.</p>
+                    <p>Instant institutional-grade analysis of financials, rankings, competitors, and strategic frameworks for C-suite decisions.</p>
+                </div>
+                <div class="log-entry">
+                    <div class="log-header">
+                        <h4>What we learned last month</h4>
+                        <span class="log-date">Nov 2025</span>
+                    </div>
+                    <div class="log-divider"></div>
+                    <p>User onboarding matters more than we thought. Rebuilt Taskflow's first-run experience.</p>
+                </div>
+                <div class="log-entry">
+                    <div class="log-header">
+                        <h4>What didn't work</h4>
+                        <span class="log-date">Oct 2025</span>
+                    </div>
+                    <div class="log-divider"></div>
+                    <p>Tried building a social layer. Felt forced. Scrapped it to focus on core utility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSING CTA SECTION -->
+    <section class="closing-cta">
+        <div class="closing-content">
+            <h2 class="closing-heading">What Should We Build Next?</h2>
+            <p class="closing-description">
+                We build for people who have real problems.<br>
+                If you have an idea worth building, we want to hear it.
+            </p>
+            <div class="closing-buttons">
+                <button class="btn-primary">Suggest an Idea</button>
+                <button class="btn-secondary-light">Follow the Journey</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">CONTINUUM LABS</div>
+                <div class="footer-tagline">Built across time. Shipped monthly.</div>
+            </div>
+            <div class="footer-right">
+                <a href="#">About</a>
+                <a href="#">Apps</a>
+                <a href="#">Contact</a>
+                <a href="#">Twitter/X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

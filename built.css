@@ -1,0 +1,290 @@
+/* ========================================
+   WHAT WE'VE BUILT - PAGE STYLES
+   ======================================== */
+
+/* Page Header */
+.built-header {
+    padding: 160px 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.built-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+}
+
+.built-subtitle {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* Main Content Area */
+.built-main {
+    padding: 0 48px 120px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* App Grid */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+/* App Card */
+.app-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.app-card-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.app-card-item:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 217, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Visual */
+.app-card-visual {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, 
+        rgba(0, 217, 255, 0.08) 0%, 
+        rgba(157, 78, 221, 0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card-visual::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(0, 217, 255, 0.15) 0%, 
+        transparent 70%);
+    opacity: 0.5;
+}
+
+.app-card-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+/* Card Content */
+.app-card-content {
+    padding: 24px 28px 28px;
+}
+
+.app-card-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.app-card-description {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Card Meta */
+.app-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.app-card-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.02em;
+}
+
+.app-card-category {
+    font-size: 0.75rem;
+    color: rgba(0, 217, 255, 0.7);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(0, 217, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Card Action */
+.app-card-action {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.app-card-item:hover .app-card-action {
+    color: #00d9ff;
+}
+
+/* Archive Note */
+.archive-note {
+    text-align: center;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.35);
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Active Nav Link */
+.nav-active {
+    color: #00d9ff !important;
+}
+
+/* ========================================
+   LIGHT THEME OVERRIDES
+   ======================================== */
+
+body:not(.theme-futuristic) .built-header {
+    background: transparent;
+}
+
+body:not(.theme-futuristic) .built-title {
+    color: #1f2937;
+}
+
+body:not(.theme-futuristic) .built-subtitle {
+    color: #6b7280;
+}
+
+body:not(.theme-futuristic) .app-card-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+body:not(.theme-futuristic) .app-card-item:hover {
+    background: #ffffff;
+    border-color: #a855f7;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+body:not(.theme-futuristic) .app-card-visual {
+    background: linear-gradient(135deg, 
+        rgba(168, 85, 247, 0.06) 0%, 
+        rgba(99, 102, 241, 0.06) 100%);
+}
+
+body:not(.theme-futuristic) .app-card-visual::before {
+    background: radial-gradient(circle, 
+        rgba(168, 85, 247, 0.1) 0%, 
+        transparent 70%);
+}
+
+body:not(.theme-futuristic) .app-card-logo {
+    color: rgba(168, 85, 247, 0.25);
+}
+
+body:not(.theme-futuristic) .app-card-name {
+    color: #1f2937;
+}
+
+body:not(.theme-futuristic) .app-card-description {
+    color: #6b7280;
+}
+
+body:not(.theme-futuristic) .app-card-date {
+    color: #9ca3af;
+}
+
+body:not(.theme-futuristic) .app-card-category {
+    color: #7c3aed;
+    background: rgba(168, 85, 247, 0.1);
+}
+
+body:not(.theme-futuristic) .app-card-action {
+    color: #9ca3af;
+}
+
+body:not(.theme-futuristic) .app-card-item:hover .app-card-action {
+    color: #a855f7;
+}
+
+body:not(.theme-futuristic) .archive-note {
+    color: #9ca3af;
+    border-top-color: #e5e7eb;
+}
+
+body:not(.theme-futuristic) .nav-active {
+    color: #a855f7 !important;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .built-header {
+        padding: 120px 24px 60px;
+    }
+
+    .built-main {
+        padding: 0 24px 80px;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .built-title {
+        font-size: 2rem;
+    }
+
+    .built-subtitle {
+        font-size: 1rem;
+    }
+}

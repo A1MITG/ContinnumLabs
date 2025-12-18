@@ -1,0 +1,105 @@
+/* THEME TOGGLE UTILITY
+   Use this file to easily switch between themes
+   Instructions at the bottom
+*/
+
+/* ============================================
+   DEFAULT THEME (Original Calm & Professional)
+   ============================================ */
+
+.theme-default {
+    /* Restore original color palette */
+    --primary: #2d3561;
+    --primary-dark: #1a1f3a;
+    --secondary: #1e2433;
+    --accent: #a855f7;
+    --accent-bright: #c084fc;
+    --base: #fafaf9;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --text-light: #f3f4f6;
+    --white: #ffffff;
+    --border: #e5e7eb;
+}
+
+/* Remove all futuristic effects in default mode */
+.theme-default body {
+    background: var(--base);
+    background-image: none;
+}
+
+.theme-default .hero {
+    background: radial-gradient(ellipse at center, rgba(45, 53, 97, 0.03) 0%, var(--base) 70%);
+}
+
+.theme-default .hero::before,
+.theme-default .hero::after {
+    display: none;
+}
+
+.theme-default .btn-primary {
+    background: var(--primary);
+    box-shadow: 0 4px 12px rgba(45, 53, 97, 0.15);
+    border: none;
+}
+
+.theme-default .btn-primary::before {
+    display: none;
+}
+
+.theme-default .manifesto {
+    background: var(--secondary);
+}
+
+.theme-default .manifesto::after {
+    display: none;
+}
+
+
+/* ============================================
+   FUTURISTIC THEME (Barnet-inspired)
+   ============================================ */
+
+.theme-futuristic {
+    /* This class activates the futuristic theme */
+    /* All styles are in theme-futuristic.css */
+}
+
+
+/* ============================================
+   INFINITY LOGO VISIBILITY TOGGLE
+   ============================================ */
+
+/* Hide ET-Sphere by default */
+.et-sphere-container {
+    display: none;
+}
+
+/* Show ET-Sphere when futuristic theme is active */
+.theme-futuristic .et-sphere-container {
+    display: block;
+}
+
+/* Legacy support */
+.infinity-logo {
+    display: none !important;
+}
+
+
+/* ============================================
+   HOW TO USE THIS FILE
+   ============================================
+   
+   To switch themes, add a class to the <body> tag in index.html:
+   
+   DEFAULT THEME (Calm & Professional):
+   <body class="theme-default">
+   
+   FUTURISTIC THEME (Barnet-inspired with infinity logo):
+   <body class="theme-futuristic">
+   
+   OR use JavaScript to toggle:
+   document.body.classList.toggle('theme-futuristic');
+   document.body.classList.toggle('theme-default');
+   
+   ============================================ */

@@ -1,0 +1,485 @@
+/* BARNET-INSPIRED FUTURISTIC THEME
+   Modular theme file - can be toggled on/off
+   Inspired by: https://www.olyablack.com/portfolio/barnet
+*/
+
+:root {
+    /* Futuristic Dark Theme Colors */
+    --primary: #0a0e27;
+    --primary-dark: #050812;
+    --secondary: #1a1f3a;
+    --accent: #00d9ff;
+    --accent-bright: #00f0ff;
+    --accent-purple: #9d4edd;
+    --base: #0f0f1e;
+    --text-dark: #ffffff;
+    --text-muted: #a0a8c1;
+    --text-light: #ffffff;
+    --white: #ffffff;
+    --border: #2a2f4a;
+    
+    /* Glow Effects */
+    --glow-cyan: 0 0 20px rgba(0, 217, 255, 0.4);
+    --glow-purple: 0 0 20px rgba(157, 78, 221, 0.4);
+    --glow-strong: 0 0 40px rgba(0, 217, 255, 0.6);
+}
+
+/* Dark Base */
+body {
+    background: var(--base);
+    color: var(--text-dark);
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(157, 78, 221, 0.05) 0%, transparent 50%);
+}
+
+/* HERO - Futuristic Style */
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(0, 217, 255, 0.03) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(157, 78, 221, 0.03) 50%, transparent 52%);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.logo {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+    font-weight: 700;
+}
+
+.hero-tagline {
+    color: var(--accent);
+    font-size: clamp(24px, 3vw, 32px);
+}
+
+.hero-description {
+    color: var(--text-muted);
+}
+
+.continuity-line {
+    background: linear-gradient(to right, transparent, var(--accent), var(--accent-purple), transparent);
+    opacity: 0.6;
+    box-shadow: var(--glow-cyan);
+}
+
+/* Futuristic Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-purple) 100%);
+    box-shadow: var(--glow-cyan);
+    border: 1px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--glow-strong);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    left: 0;
+}
+
+.btn-secondary:hover {
+    color: var(--primary-dark);
+    box-shadow: var(--glow-cyan);
+}
+
+.btn-secondary-light {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary-light:hover {
+    background: var(--accent);
+    color: var(--primary-dark);
+    box-shadow: var(--glow-cyan);
+}
+
+/* MANIFESTO - Dark Futuristic */
+.manifesto {
+    background: var(--primary);
+    position: relative;
+}
+
+.manifesto::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d9ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.section-label {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.manifesto-text p {
+    color: var(--text-muted);
+}
+
+/* PHILOSOPHY - Glowing Cards */
+.philosophy {
+    background: var(--base);
+}
+
+/* CLARITY SECTION - Futuristic */
+.clarity {
+    background: var(--secondary);
+    position: relative;
+    z-index: 10;
+}
+
+.clarity-header .logo {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.clarity-tagline {
+    color: var(--text-muted);
+}
+
+.clarity-label {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+.clarity-text {
+    color: var(--text-muted);
+}
+
+.clarity-text p {
+    color: var(--text-muted);
+}
+
+.clarity-lead {
+    color: var(--text-light);
+}
+
+.clarity-emphasis {
+    color: var(--text-light);
+}
+
+.clarity-list li {
+    color: var(--text-muted);
+}
+
+.clarity-list .dash {
+    color: var(--accent);
+}
+
+.clarity-charter {
+    border-top-color: rgba(0, 217, 255, 0.15);
+}
+
+.charter-lead {
+    color: var(--text-light);
+}
+
+.charter-list p {
+    color: var(--text-muted);
+}
+
+.philosophy-card {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--accent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.philosophy-card:hover {
+    border-color: var(--accent-bright);
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-8px);
+}
+
+.principle-title {
+    color: var(--white);
+}
+
+.principle-title::first-letter {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.principle-description {
+    color: var(--text-muted);
+}
+
+/* GENERATIONAL - Enhanced Glow */
+.generational {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+    position: relative;
+}
+
+.generational::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.column h3 {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.divider {
+    background: linear-gradient(to bottom, transparent, var(--accent), var(--accent-purple), transparent);
+    box-shadow: var(--glow-cyan);
+}
+
+/* FEATURED APP - Neon Card */
+.featured-app {
+    background: var(--base);
+}
+
+.app-card {
+    background: rgba(26, 31, 58, 0.6);
+    border: 2px solid var(--accent);
+    box-shadow: var(--glow-cyan);
+    backdrop-filter: blur(10px);
+}
+
+.app-badge {
+    background: var(--accent-purple);
+    box-shadow: var(--glow-purple);
+}
+
+.app-visual {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-purple) 100%);
+    box-shadow: inset var(--glow-cyan);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-visual::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.app-name {
+    color: var(--white);
+}
+
+.app-tagline {
+    color: var(--accent);
+}
+
+.app-link {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.app-link:hover {
+    border-bottom-color: var(--accent);
+    text-shadow: var(--glow-strong);
+}
+
+/* BUILD-IN-PUBLIC - Dark Cards */
+.build-public {
+    background: var(--primary);
+}
+
+.log-entry {
+    background: rgba(26, 31, 58, 0.5);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.log-entry:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+}
+
+.log-header h4 {
+    color: var(--accent);
+}
+
+.log-divider {
+    background: var(--accent);
+    box-shadow: var(--glow-cyan);
+}
+
+/* CLOSING CTA - Intense Glow */
+.closing-cta {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.closing-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.closing-heading {
+    color: var(--white);
+    text-shadow: var(--glow-cyan);
+}
+
+/* FOOTER - Dark */
+.footer {
+    background: var(--primary-dark);
+    border-top: 1px solid var(--accent);
+    box-shadow: 0 -2px 20px rgba(0, 217, 255, 0.1);
+}
+
+.footer-brand {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+.footer-right a {
+    color: var(--text-muted);
+}
+
+.footer-right a:hover {
+    color: var(--accent);
+    text-shadow: var(--glow-cyan);
+}
+
+/* Particle Effect Background */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, var(--accent), transparent),
+        radial-gradient(2px 2px at 60% 70%, var(--accent-purple), transparent),
+        radial-gradient(1px 1px at 50% 50%, var(--accent), transparent),
+        radial-gradient(1px 1px at 80% 10%, var(--accent), transparent),
+        radial-gradient(2px 2px at 90% 60%, var(--accent-purple), transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    animation: particles 20s ease infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@keyframes particles {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+}
+
+/* ET-SPHERE ENHANCEMENTS FOR FUTURISTIC THEME */
+.theme-futuristic .et-sphere-container {
+    display: block;
+}
+
+.theme-futuristic .sphere-intelligence {
+    filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.4));
+}
+
+.theme-futuristic .sphere-intelligence:hover {
+    filter: drop-shadow(0 0 60px rgba(0, 217, 255, 0.6));
+}
+
+.theme-futuristic .solid-sphere {
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(0, 240, 255, 0.4) 0%, 
+        rgba(157, 78, 221, 0.3) 40%, 
+        rgba(0, 217, 255, 0.2) 100%);
+}
+
+.theme-futuristic .infinity-symbol {
+    color: var(--accent);
+}
+
+.theme-futuristic .sphere-hint {
+    color: var(--accent);
+    font-family: var(--font-main);
+    text-transform: uppercase;
+}
+
+/* Enhanced glow for intelligence pulse in futuristic theme */
+.theme-futuristic .intelligence-pulse {
+    background: radial-gradient(circle, var(--accent) 0%, var(--accent-purple) 50%, transparent 70%);
+}
+
+/* Remove orbital rings in futuristic theme */
+.theme-futuristic .orbit {
+    display: none !important;
+}
